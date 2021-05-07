@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US">
+<head>
+
+<!-- meta tags -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!-- favicon -->
+<link rel="icon" href="images/favicon.ico">
+
+<!-- page title -->
+<title>Contacts - CellCV</title>
+
+<!-- css stylesheets -->
+<link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/print.css" type="text/css" media="all">
+<link rel="stylesheet" href="./screen.css" media="screen, projection" type="text/css" />
+<link rel="stylesheet" href="./prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/jquery.pjax.js"></script>
+<script type="text/javascript" src="js/jquery.pjax.settings.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-21732667-4', 'artweb-studio.com');
+  ga('send', 'pageview');
+
+</script>
+
+<script>
+$(document).ready(function(){
+  var el = $('#main .wrapper'), curHeight, newHeight, autoHeight;
+    
+    $(document).pjax('.header-menu a', '#main .wrapper');
+    $(document).on('start.pjax', function() {
+        // Animation begin.
+        if(curHeight != undefined){
+            curHeight = newHeight;
+        }else{
+            curHeight = el.outerHeight();
+            $('#main').height(curHeight);
+        }
+        $('#main .wrapper').fadeOut(200);
+    }).on('complete.pjax', function() {
+        // Animation end.
+        setTimeout(function(){
+        	if($('#contact-page').length > 0) {
+        		initialize();
+        	}
+
+        	if($('#portfolio-page').length > 0) {
+	            setTimeout(function() {
+        			iso();
+	            	autoHeight = el.css('height', 'auto').outerHeight(); //temporarily change to auto and get the height.
+	            	$('#main').height(curHeight).animate({height: autoHeight}, 300);
+
+	            	setTimeout(function() {
+	            		$('#main').css('height', 'auto');
+		            	curHeight = null;
+	        		}, 300);
+        		}, 240);
+	        }else{
+	            newHeight = el.outerHeight();
+	            $('#main').height(curHeight).animate({height: newHeight}, 300);
+	        }
+        }, 500);
+        
+        $('#main .wrapper').delay(200).fadeIn(800);
+    	
+    	$('ul.header-menu a').removeClass('active not-use-pjax').unbind();
+        set_active_menu_link();
+    });
+});
+</script>
+</head>
+
+<body>
+	<div id="page-wrapper">
+		<header id="header" role="banner">
+			<ul class="header-menu">
+				<li class="portfolio hexagon">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2">
+							<div class="inner">
+								<a href="./portfolio.html">
+									<i class="fas fa-image"></i>
+									
+									<span>Portfolio</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="profile hexagon">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2">
+							<div class="inner">
+								<a href="./profile.html">
+									<i class="fa fa-user" aria-hidden="true"></i>
+									<span>Profile</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="userpic hexagon">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2">
+							<a href="./index.html">
+								<img src="./images/me.jpg" height="204" width="236" alt="">
+							</a>
+						</div>
+					</div>
+				</li>
+				<li class="resume hexagon">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2">
+							<div class="inner">
+								<a href="./myresume.html">
+									<i class="fa fa-file" aria-hidden="true"></i>
+									<span>Resume</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="contact hexagon">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2">
+							<div class="inner">
+								<a href="./contact.html" class="active not-use-pjax">
+									<i class="far fa-envelope"></i>
+									<span>Contact</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</header><!-- /#header -->
+		
+
+<section id="main">
+    <div class="wrapper">
+    <script type="text/javascript" src="js/script.js"></script>
+<div id="new-doc-title" style="display:none">Contact - CellCV</div>
+<div id="contact-page" class="page">
+	<div class="page-title">
+		<h1>Contact</h1>
+	</div>
+	<div class="contact-address">
+		Guntur, India
+	</div>
+	<div class="cotent-wrapper">
+		<div class="map">
+			<div class="mapouter"><div class="gmap_canvas"><iframe width="800" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=Thullur&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="10" scrolling="no" marginheight="5" marginwidth="0"></iframe><a href="https://fmovies2.org"></a><br><style>.mapouter{position:center;text-align:right;height:450px;width:700px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:600px;width:600px;position:center;}</style></div></div>
+		<!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="650" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=Dondapadu&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">custom google map generator</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>"> -->
+			<!-- <div id=""></div> -->
+			<div class="qr-code">
+				<!-- <h3>Vcard</h3> -->
+				<!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Dondapadu&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">custom google map generator</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div> -->
+			</div>
+		</div>
+		
+		<div class="contact-details">
+			<div class="left-col">
+				<form action="#" method="post" id="contact-form">
+					<div class="form-item">
+						<label for="name">Name:</label>
+						<input type="text" name="name" id="name" placeholder="Type Name">
+					</div>
+					<div class="form-item">
+						<label for="name">Email:</label>
+						<input type="email" name="email" id="email" placeholder="Type mail">
+					</div>
+					<label for="message">Message:</label>
+					<textarea name="userMessage" id="userMessage" cols="30" rows="4"></textarea>
+					
+					<input type="submit" value="Submit" class="form-submit">
+					<div class="message"></div>
+				</form>
+			</div>
+			<div class="right-col">
+				<h2>Contact information</h2>
+				<p class="fas fa-user"><strong>Sai Chandu</strong></p>
+				<p class="fas fa-mobile-alt">+917337520262</p>
+				<p class="fab fa-skype">@nschandu</p>
+				<p class="far fa-envelope"><a href="mailto:support@artweb-studio.com">nschandu88@gmail.com</a></p>
+	
+			</div>
+		</div>
+	</div>
+</div>		</div>
+		</section>
+
+        <footer id="footer" role="contentinfo">
+			<ul>
+				<li class="twitter hexagon">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2">
+							<div class="inner">
+								<a href="#">
+									<i class="fab fa-twitter"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="gplus hexagon">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2">
+							<div class="inner">
+								<a href="#">
+									<i class="fab fa-google-plus-g"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="copyright">©2021 <br /> All rights reserved</li>
+				<li class="linkedin hexagon">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2">
+							<div class="inner">
+								<a href="#">
+									<i class="fab fa-linkedin-in"></i>
+								
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="facebook hexagon">
+					<div class="hexagon-in1">
+						<div class="hexagon-in2">
+							<div class="inner">
+								<a href="#">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+	    </footer><!-- /#footer -->
+	</div>
+	<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24212860 = new Ya.Metrika({id:24212860,
+                    clickmap:true,
+                    accurateTrackBounce:true,
+                    ut:"noindex"});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24212860?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>      
+		
+

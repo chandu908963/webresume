@@ -1,0 +1,258 @@
+
+  @import url('../images/bg.jpg?1394570112');
+  @import url('images/favicon.ico');
+  head{
+    display: none;
+  }
+  html{
+    line-height: 1;
+  }
+body{
+  background:url('../images/bg.jpg?1394570112') 50% 50% fixed;
+  color: #c7c7c7;
+  font-family:'PT Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  -webkit-background-size: cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size: cover;
+
+}
+body{
+  display: block;
+  margin: 8px;
+}
+
+#page-wrapper{
+  width: 822px;
+  margin: 0 auto;
+}
+div{
+  display: block;
+}
+
+#page-wrapper #header{
+  height: 408px;
+  position: relative;
+  padding: 100px 0 0 0;
+  zoom: 1;
+}
+html{
+  line-height: 1;
+}
+element.style{
+  display: none;
+}
+
+#page-wrapper #header:after{
+  content: "";
+  display: table;
+  clear:both;
+
+}
+#page-wrapper #main{
+  background: #333;
+  margin-top: -224px;
+  min-height: 408px;
+  overflow: hidden;
+  -webkit-transition: height 0.3s ease;
+  -moz-transition: height 0.3s ease;
+  -o-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+}
+#page-wrapper #main .wrapper{
+  overflow: hidden;
+
+}
+#page-wrapper #main .wrapper .page{
+  margin: 37px 0 0;
+  overflow: hidden;
+}
+
+#page-wrapper #main .page-title{
+  padding-top: 6px;
+  text-align: center;
+  z-index: 10;
+}
+#profile-page em.subtitle{
+  text-align: center;
+  display: block;
+  font-style: italic;
+  font-size: 24px;
+  padding: 65px 0 45px;
+}
+em{
+  font-style: italic;
+}
+#page-wrapper #header .header-menu{
+  position:absolute;
+}
+li{
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+ul{
+  list-style: none;
+}
+ul{
+  list-style-type: disc;
+}
+ul{
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+#page-wrapper #footer
+{
+  margin: top -220px;
+  zoom: 1;
+}
+.hexagon{
+  width:204px;
+  height: 236px;
+  overflow: hidden;
+  visibility: hidden;
+  float: left;
+  display: block;
+  -webkit-transform:rotate(30deg);
+  -moz-transform:rotate(30deg);
+  -o-transform:rotate(30deg);
+  transform: rotate(30deg);
+}
+.portfolio .contact{
+  margin: 168px 0 0 -43px;
+}
+
+.profile .resume{
+  margin: 66px 0 0 -22px
+
+}
+.userpic{
+  margin:-36px 0 0 -28px
+}
+.contact{
+  margin: 168px -43px 0 -28px;
+}
+.hexagon div.hexagon-in1{
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  -webkit-transform: rotate(60deg);
+  -moz-transform:rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -o-transform:rotate(60deg);
+  transform: rotate(-60deg);
+}
+
+#profile-page .content-wrapper .post{
+  padding:30px 0 40px;
+}  
+#profile-page .content-wrapper{
+  padding:0 32px 195px
+}
+#profile-page #main .content-wrapper ul{
+  margin-bottom: 20px;
+}
+#profile-page #main .content-wrapper ul li{
+  background: url('../images/bg-li.png?1394570112') no-repeat 0 9px;
+  padding-left: 18px;
+}
+#profile-page .content-wrapper .technical-skills .progressbar{
+  background: none;
+  padding-left: 0;
+  display: block;
+  height: 35px;
+  width:100%;
+}
+#profile-page .content-wrapper .technical-skills
+{
+  overflow: hidden;
+  padding: 40px 0;
+}
+#profile-page .content-wrapper .technical-skills .skills{
+  float: left;
+  width: 341px;
+  margin-right: 70px;
+}
+#profile-page .content-wrapper .technical-skills .Other-skills{
+  float: left;
+  width: 341px;
+}
+#page-wrapper #main .block-title{
+  padding-bottom: 30px;
+}
+h1, h2, h3, h4, h5{
+  font-family: 'Fjalla one', sans-serif;
+  font-weight: normal;
+  line-height: normal;
+}
+h2{
+  font-size: 32px;
+  color: #fff;
+}
+
+h2{
+  display: block;
+  font-size: 1.5cm;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+#profile-page .content-wrapper .technical-skills li{
+  margin-bottom: 1px;
+}
+#profile-page .content-wrapper .technical-skills .progress .turquoise{
+  background: #09bf7d;
+
+}
+
+#profile-page .content-wrapper .skills{
+  background: #414141;
+  margin: 0 -32px;
+  padding:30px 32px 40px 32px;
+
+}
+
+#profile-page .content-wrapper .Other-skills{
+  overflow: hidden;
+  padding: 40px 0;
+}
+  
+
+ ul li {
+  display: flex;
+  margin-bottom: 10px;
+  color: #b1eaff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ .skill_name {
+  width: 25%;
+}
+ .skill_progress {
+  width: 60%;
+  margin: 0 5px;
+  height: 5px;
+  background: #009fd9;
+  position: relative;
+}
+
+ .skill_per {
+  width: 15%;
+}
+
+ .skill_progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+}
